@@ -1,0 +1,5 @@
+-- hl.config({
+-- 	misc = {
+-- 		focus_on_activate = true
+-- 	},
+-- })

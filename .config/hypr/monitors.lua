@@ -17,14 +17,3 @@ hl.monitor({
    position  = "1920x0",
    scale     = "auto",
 })
-hl.monitor({
-   output    = "wraeclast2",
-   mode      = "preferred",
-   scale     = "auto",
-})
-hl.monitor({
-   output    = "wraeclast2",
-   mode      = "preferred",
-   scale     = "auto",
-})
-

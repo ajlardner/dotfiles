@@ -1,0 +1,5 @@
+configuration {
+ modi: "window,run,drun,ssh,combi";
+ combi-modi: "window,drun,run,ssh";
+ }
+ @theme "Arc-Dark"

@@ -1,0 +1,7 @@
+--no-playlist
+# always write and embed subtitles
+--write-subs
+--write-auto-subs
+--embed-subs
+
+--merge-output-format mp4   

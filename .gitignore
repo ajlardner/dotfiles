@@ -1,0 +1,31 @@
+# secrets and local overrides
+.env
+.env.*
+!.env.example
+*.secret
+*.secrets
+private.env
+local.env
+*-local.conf
+*-private.conf
+.vw-data/
+
+# SSH, GPG, crypto keys, certificates
+.ssh/id_*
+!.ssh/*.pub
+.gnupg/private-keys-v1.d/
+*.pem
+*.key
+*.p12
+*.pfx
+*.kdbx
+*.agekey
+
+# runtime and caches
+.cache/
+.local/share/
+*.log
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.dotfiles

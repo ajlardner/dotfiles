@@ -1,0 +1,10 @@
+[Unit]
+Description=Randomize wallpapers on every monitor uniquely with awww
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/home/aj/.shell-scripts/awww_randomize_multi.sh /home/aj/.wallpapers/gif 120
+Restart=on-failure
+
+[Install]
+WantedBy=hyprland-session.target

@@ -1,15 +1,5 @@
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
--- if a monitor is not identified here, it should be considered to be using hyprland defaults
--- or we should actually get info about it
-local monitor_map = {
-	[1] = "DP-1",
-	[2] = "HDMI-A-1",
-	[3] = "DP-2",
-	[4] = "DP-3",
-	[5] = "wraeclast"
-}
-
 -- window actions
 hl.bind(mainMod .. " + Q", 	hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + W", 	hl.dsp.window.close())
@@ -23,17 +13,10 @@ hl.bind(mainMod .. " + A", 	hl.dsp.exec_cmd("$(rofi -show drun)"))
 hl.bind(mainMod .. " + S", 	hl.dsp.exec_cmd("wezterm"))
 hl.bind(mainMod .. " + D", 	hl.dsp.exec_cmd("pcmanfm")) 
 hl.bind(mainMod .. " + F", 	hl.dsp.exec_cmd("librewolf"))
--- lock screen / power management
-hl.bind(mainMod .. " + minus", 	hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("rofi-rbw"))
 
--- show first workspace on all monitors TODO: make this loop through all monitors programatically, not just 1-5
-hl.bind(mainMod .. "+ grave", function()
-	for i=1, 5 do
-		hl.dispatch(hl.dsp.focus({ monitor = monitor_map[i] or i }))
-		hl.dispatch(hl.dsp.focus({ workspace = "m~1"  }))
-	end
-end)
+-- exit hyprland
+hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
 -- move window focus 
 hl.bind(mainMod .. " + H",  	hl.dsp.focus({ direction = "left" }))

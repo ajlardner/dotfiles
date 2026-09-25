@@ -1,5 +1,5 @@
-# Arch Linux + Hyprland Dotfiles
+# Arch Linux + Niri Dotfiles
 
-Collection of configurations and scripts for running a desktop environment with Hyprland on Arch Linux
+My personal configuration for running a desktop environment on Arch Linux with Wayland using the Niri compositor, quickshell, and various custom shell scripts
 
-Uses this guide to managing dotfiles with a bare git repo https://www.atlassian.com/git/tutorials/dotfiles
+Uses [yadm](https://yadm.io/) to wrap git and make it easier to do a bare repo

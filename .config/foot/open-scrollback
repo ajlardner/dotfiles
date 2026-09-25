@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -eu
+umask 077
+
+tmp=$(mktemp "${TMPDIR:-/tmp}/foot-scrollback.XXXXXX")
+cleanup() {
+    rm -f "$tmp"
+}
+trap cleanup EXIT HUP INT TERM
+
+cat >"$tmp"
+
+# wait for neovim to exit, then remove the temporary file
+foot nvim -i NONE \
+    -c 'execute "source " . fnameescape($HOME . "/.vim/userscripts/scrollback.vim")' \
+    "$tmp"

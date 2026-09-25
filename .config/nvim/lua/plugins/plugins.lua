@@ -11,19 +11,22 @@ return {
 		opts = {},
 	},
 	{ 'norcalli/nvim-colorizer.lua' },
-	{ 'nvim-telescope/telescope.nvim', version = '*',
-    		dependencies = {
-        		'nvim-lua/plenary.nvim',
-        		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    		}
-	},
 	{ 'stevearc/oil.nvim',
 		---@module 'oil'
 		---@type oil.SetupOpts
 		opts = {},
 		-- Optional dependencies
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
 		lazy = false,
 	},
-
+	{
+	  'ibhagwan/fzf-lua',
+	  -- optional for icon support
+	  dependencies = { 'nvim-tree/nvim-web-devicons' },
+	  ---@module 'fzf-lua'
+	  ---@type fzf-lua.Config|{}
+	  ---@diagnostic disable: missing-fields
+	  opts = {}
+	  ---@diagnostic enable: missing-fields
+	}
 }

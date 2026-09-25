@@ -29,3 +29,5 @@ local.env
 *.sqlite-shm
 *.sqlite-wal
 .dotfiles
+
+.config/nvim/lazy-lock.json

@@ -35,6 +35,14 @@ vim.g.clipboard = {
 }
 vim.opt.clipboard = "unnamedplus"
 
+-- make tabs equal to 4 spaces
+vim.opt.smarttab = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+
+
 -- set line number color to darkgrey and bolded
 vim.api.nvim_set_hl(0, 'LineNr', { fg='darkgrey', bold=true })
 

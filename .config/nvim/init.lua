@@ -8,42 +8,8 @@ require 'config.lualine'
 require 'config.commands'
 require 'config.oil'
 require 'config.colorizer'
-
+require 'config.options'
+require('autoclose').setup()
 -- LSPs
 vim.lsp.enable('lua_ls')
 
----------------------
----- VIM OPTIONS ----
----------------------
--- show absolute line numbers
-vim.opt.number = true
-
-vim.opt.signcolumn = 'number'
-
--- remove background colors for normal and nontext on both terminal and gui
-vim.cmd [[
-  highlight Normal guibg=none
-  highlight NonText guibg=none
-  highlight Normal ctermbg=none
-  highlight NonText ctermbg=none
-]]
-
-vim.g.clipboard = {
-	name = "wl-clipboard",
-	copy  = { ["+"] = "wl-copy", ["*"] = "wl-copy --primary" },                                        paste = { ["+"] = "wl-paste", ["*"] = "wl-paste --primary" },
-	cache_enabled = 1,
-}
-vim.opt.clipboard = "unnamedplus"
-
--- make tabs equal to 4 spaces
-vim.opt.smarttab = true
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
-
-
--- set line number color to darkgrey and bolded
-vim.api.nvim_set_hl(0, 'LineNr', { fg='darkgrey', bold=true })
-
-vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })

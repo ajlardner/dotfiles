@@ -19,8 +19,18 @@ output "DP-4" {
 		preset-column-widths { proportion 1.0; }
 	}
 } 
-output "HDMI-A-1" {
+
+output "DP-5" {
 	position x=3000 y=-420
+	transform "270"
+	layout { 
+		default-column-width { proportion 1.0; } 
+		preset-column-widths { proportion 1.0; }
+	} 
+}
+
+output "HDMI-A-1" {
+	position x=4080 y=-420
 	transform "90"
 	layout { 
 		default-column-width { proportion 1.0; } 
@@ -28,12 +38,7 @@ output "HDMI-A-1" {
 	} 
 }
 output "DP-1" {
-	position x=4080 y=-420
-	transform "270"
-	layout { 
-		default-column-width { proportion 1.0; } 
-		preset-column-widths { proportion 1.0; }
-	} 
+	position x=5160 y=0
 }
 
 cursor { xcursor-size 24; }

@@ -2,66 +2,70 @@ import QtQuick
 import Quickshell
 import Quickshell.WindowManager
 
-Repeater {
-    model: WindowManager.screenProjection(bar.screen).windowsets
+Row {
+    anchors.verticalCenter: parent.verticalCenter
 
-    delegate: Item {
-        required property var modelData
-        visible: modelData.shouldDisplay
-        width: workspaceLabel.implicitWidth + 18
-        height: 24
+    Repeater {
+        model: WindowManager.screenProjection(bar.screen).windowsets
 
-        Rectangle {
-            anchors.fill: parent
-            radius: 0
-            color: modelData.active ? "#313244" : "transparent"
-        }
+        delegate: Item {
+            required property var modelData
+            visible: modelData.shouldDisplay
+            width: workspaceLabel.implicitWidth + 18
+            height: 24
 
-        property bool active: modelData.active
+            Rectangle {
+                anchors.fill: parent
+                radius: 0
+                color: modelData.active ? "#313244" : "transparent"
+            }
 
-        // top edge of beveled button
-        Rectangle {
-            anchors { top: parent.top; left: parent.left; right: parent.right }
-            height: active ? 1 : 2
-            color: active ? "#808080" : "#ffffff"
-        }
+            property bool active: modelData.active
 
-        // left edge of beveled button
-        Rectangle {
-            anchors { left: parent.left; top: parent.top; bottom: parent.bottom }
-            width: active ? 1 : 2 
-            color: active ? "#808080" : "#ffffff"
-        }
+            // top edge of beveled button
+            Rectangle {
+                anchors { top: parent.top; left: parent.left; right: parent.right }
+                height: 1
+                color: active ? "#808080" : "#ffffff"
+            }
 
-        // bottom edge of beveled button
-        Rectangle {
-            anchors { bottom: parent.bottom; right: parent.right; left: parent.left; }
-            height: active ? 1 : 2 
-            color: active ? "#ffffff" : "#000000"
-        }
+            // left edge of beveled button
+            Rectangle {
+                anchors { left: parent.left; top: parent.top; bottom: parent.bottom }
+                width: 1
+                color: active ? "#808080" : "#ffffff"
+            }
 
-        // right edge of beveled button
-        Rectangle {
-            anchors { right: parent.right; top: parent.top; bottom: parent.bottom; }
-            width: active ? 1 : 2
-            color: active ? "#ffffff" : "#000000"
-        }
+            // bottom edge of beveled button
+            Rectangle {
+                anchors { bottom: parent.bottom; right: parent.right; left: parent.left; }
+                height: 1
+                color: active ? "#ffffff" : "#000000"
+            }
 
-        Text {
-            id: workspaceLabel
-            anchors.centerIn: parent
-            text: modelData.name
-            color: modelData.active ? "#89b4fa" : "#000000"
-            font.family: "MS Sans Serif"
-            font.pixelSize: 22
-            font.bold: modelData.active
-        }
+            // right edge of beveled button
+            Rectangle {
+                anchors { right: parent.right; top: parent.top; bottom: parent.bottom; }
+                width: 1
+                color: active ? "#ffffff" : "#000000"
+            }
 
-        MouseArea {
-            anchors.fill: parent
-            enabled: modelData.canActivate
-            cursorShape: Qt.PointingHandCursor
-            onClicked: modelData.activate()
+            Text {
+                id: workspaceLabel
+                anchors.centerIn: parent
+                text: modelData.name
+                color: modelData.active ? "#89b4fa" : "#000000"
+                font.family: "MS Sans Serif"
+                font.pixelSize: 22
+                font.bold: modelData.active
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                enabled: modelData.canActivate
+                cursorShape: Qt.PointingHandCursor
+                onClicked: modelData.activate()
+            }
         }
     }
 }

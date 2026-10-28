@@ -24,14 +24,14 @@ Variants {
         // inner line for main bar bevel
         Rectangle { 
             anchors { top: parent.top; left: parent.left; right: parent.right }
-            height: 2
+            height: 1
             color: "#ffffff"
         }
 
         // outer line for main bar bevel
         Rectangle { 
             anchors { bottom: parent.bottom; left: parent.left; right: parent.right }
-           height: 2
+           height: 1
            color: "#000000"
         }
 
@@ -50,12 +50,8 @@ Variants {
                 font.pixelSize: 22
             }
 
-            Row {
-                spacing: 2
-                anchors.verticalCenter: parent.verticalCenter
+            Workspaces {}
 
-                Workspaces {}
-            }
         }
 
 

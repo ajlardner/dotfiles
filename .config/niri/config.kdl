@@ -53,7 +53,7 @@ layout {
         proportion 0.5
         proportion 1.0
     }
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 1.0; }
     focus-ring { off; }
     border {
         width 2
@@ -69,8 +69,8 @@ window-rule {
     default-column-width { proportion 1.0; }
 }
 
-spawn-sh-at-startup "qs"
-
+spawn-at-startup "qs"
+ 
 binds {
     Mod+Q { toggle-window-floating; }
     Mod+W repeat=false { close-window; }
@@ -79,19 +79,19 @@ binds {
     Mod+Space repeat=false { toggle-overview; }
     Mod+A repeat=false { spawn "rofi" "-show" "drun"; }
     Mod+S repeat=false { spawn "foot"; }
-    Mod+D repeat=false { spawn-sh "foot yazi"; }
+    Mod+D repeat=false { spawn "foot" "yazi"; }
     Mod+F repeat=false { spawn "librewolf"; }
-    Mod+Period repeat=false { spawn-sh "rbw unlock && rofi-rbw"; }
+    Mod+Period repeat=false { spawn "rofi-rbw"; }
     Mod+Equal repeat=false { quit; }
 
-    Mod+H { focus-column-or-monitor-left; }
-    Mod+J { focus-window-or-workspace-down; }
-    Mod+K { focus-window-or-workspace-up; }
-    Mod+L { focus-column-or-monitor-right; }
-    Mod+Left { focus-monitor-left; }
+    Mod+H { focus-monitor-left; }
+    Mod+J { focus-workspace-down; }
+    Mod+K { focus-workspace-up; }
+    Mod+L { focus-monitor-right; }
+    Mod+Left { focus-column-left; }
     Mod+Down { focus-workspace-down; }
     Mod+Up { focus-workspace-up; }
-    Mod+Right { focus-monitor-right; }
+    Mod+Right { focus-column-right; }
     Mod+Y { focus-monitor-left; }
     Mod+O { focus-monitor-right; }
 

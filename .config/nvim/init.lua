@@ -9,7 +9,5 @@ require 'config.commands'
 require 'config.oil'
 require 'config.colorizer'
 require 'config.options'
+require 'config.lsp'
 require('autoclose').setup()
--- LSPs
-vim.lsp.enable('lua_ls')
-

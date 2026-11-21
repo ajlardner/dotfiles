@@ -1,5 +1,7 @@
 # sourced in .bash_profile, changes made here will affect shells that use it as well
 
+# general vars
+SCRIPTS_DIR="$HOME/.scripts"
 # source .env first, other files depend on variables set there
 source ~/.env
 # then other bash dotfiles
@@ -7,7 +9,7 @@ source ~/.bash_aliases
 source ~/.bash_functions
 # from https://bash-prompt-generator.org/
 # advanced git information in bash prompt, used by PS1
-source ~/.shell-scripts/git-prompt.sh
+source "$SCRIPTS_DIR"/shell/git-prompt.sh
 
 # https://github.com/junegunn/fzf 
 # set up fzf key bindings and fuzzy completion

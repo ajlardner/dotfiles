@@ -5,9 +5,9 @@ alias ls="ls -F"
 alias edit-aliases="nvim $HOME/.bash_aliases && source $HOME/.bashrc"
 alias edit-functions="nvim $HOME/.bash_functions && source $HOME/.bashrc"
 alias edit-rc="nvim $HOME/.bashrc && source $HOME/.bashrc"
-alias edit-scripts="nvim $HOME/.shell-scripts && source $HOME/.bashrc"
-alias edit-config="nvim $HOME/.config && source $HOME/.bashrc"
-alias sbrc="source $HOME/.bashrc && source $HOME/.bashrc"
+alias edit-scripts="nvim $HOME/.scripts"
+alias edit-config="nvim $HOME/.config" 
+alias sbrc="source $HOME/.bashrc" 
 
 # tracks home folder in a folder called ~/.dotfiles
 # from https://www.atlassian.com/git/tutorials/dotfiles

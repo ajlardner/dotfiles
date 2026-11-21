@@ -23,7 +23,6 @@ local.env
 
 # runtime and caches
 .cache/
-.local/share/
 *.log
 *.sqlite
 *.sqlite-shm

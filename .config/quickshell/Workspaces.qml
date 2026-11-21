@@ -55,8 +55,8 @@ Row {
                 anchors.centerIn: parent
                 text: modelData.name
                 color: modelData.active ? "#89b4fa" : "#000000"
-                font.family: "MS Sans Serif"
-                font.pixelSize: 22
+                font.family: "W95FA"
+                font.pixelSize: 24
                 font.bold: modelData.active
             }
 

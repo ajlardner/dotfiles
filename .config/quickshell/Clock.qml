@@ -43,7 +43,7 @@ Rectangle {
         anchors.centerIn: parent
         text: Qt.formatDateTime(clock.date, "ddd, MMM d  HH:mm:ss")
         color: "#000000"
-        font.family: "MS Sans Serif"
-        font.pixelSize: 18
+        font.family: "W95FA"
+        font.pixelSize: 20
     }
 }
